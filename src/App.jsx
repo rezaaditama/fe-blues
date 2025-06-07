@@ -1,7 +1,11 @@
+import Button from './components/Button';
+
 const App = () => {
   return (
-    <div className='w-full bg-blue-700 min-h-screen flex justify-center items-center'>
-      <p className='text-white'>Hello World</p>
+    <div className='w-full min-h-screen flex justify-center items-center'>
+      <Button className={'bg-blue-800 text-white'} type={'button'}>
+        Submit
+      </Button>
     </div>
   );
 };
