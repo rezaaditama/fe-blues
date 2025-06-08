@@ -1,41 +1,11 @@
-import Button from './components/Button';
-import Input from './components/Input';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 
 const App = () => {
   return (
-    <div className='min-h-screen w-full flex justify-center items-center'>
-      <div className='w-1/3 shadow-2xl rounded-sm p-5'>
-        <div className='text-center'>
-          <h1 className='text-2xl font-bold text-green-950'>LOGIN</h1>
-          <p className='text-sm text-green-900'>
-            Welcome! please enter your account
-          </p>
-        </div>
-        <form action={''} className='pt-2 space-y-3'>
-          <Input
-            label={'Username'}
-            id={'username'}
-            name={'username'}
-            type={'text'}
-            placeholder={'Enter your username'}
-          />
-          <Input
-            label={'Password'}
-            id={'password'}
-            name={'password'}
-            type={'password'}
-            placeholder={'Enter your password'}
-          />
-          <Button className={'bg-green-900 text-white w-full'}>SUBMIT</Button>
-          <p className='text-base text-center'>
-            Don't have an account?{' '}
-            <a href='' className='font-bold text-green-900'>
-              Sign Up
-            </a>
-          </p>
-        </form>
-      </div>
-    </div>
+    <>
+      <RegisterPage />
+    </>
   );
 };
 

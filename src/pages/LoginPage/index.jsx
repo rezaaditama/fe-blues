@@ -1,28 +1,27 @@
-import Button from './components/Button';
+import AuthLayout from '../../components/AuthLayout';
+import Button from '../../components/Button';
+import Input from '../../components/Input';
+import Overlay from '../../components/Overlay';
 
 const LoginPage = () => {
   return (
-    <div className='min-h-screen w-full flex justify-center items-center'>
-      <div className='w-1/3 shadow-2xl rounded-sm p-5'>
-        <div className='text-center'>
-          <h1 className='text-2xl font-bold text-green-950'>LOGIN</h1>
-          <p className='text-sm text-green-900'>
-            Welcome! please enter your account
-          </p>
-        </div>
+    <div className='min-h-screen w-full flex justify-center items-center relative'>
+      <Overlay />
+      <AuthLayout className={'w-1/3'} type={'login'}>
         <form action={''} className='pt-2 space-y-3'>
-          <Input />
-          <label
-            htmlFor='password'
-            className='font-bold text-lg text-green-900'
-          >
-            Password
-          </label>
-          <input
-            type='text'
-            name='password'
-            id='password'
-            className='border-1 w-full rounded-sm p-1 border-gray-400 focus:border-1 outline-green-900'
+          <Input
+            label={'Username'}
+            id={'username'}
+            name={'username'}
+            type={'text'}
+            placeholder={'Enter your username'}
+          />
+          <Input
+            label={'Password'}
+            id={'password'}
+            name={'password'}
+            type={'password'}
+            placeholder={'Enter your password'}
           />
           <Button className={'bg-green-900 text-white w-full'}>SUBMIT</Button>
           <p className='text-base text-center'>
@@ -32,7 +31,7 @@ const LoginPage = () => {
             </a>
           </p>
         </form>
-      </div>
+      </AuthLayout>
     </div>
   );
 };
