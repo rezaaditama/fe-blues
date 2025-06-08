@@ -1,1 +1,16 @@
 @import 'tailwindcss';
+
+/* Font */
+/* @import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tac+One&display=swap');
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-tac {
+  font-family: 'Tac One', cursive;
+}
+
+.font-edu {
+  font-family: 'Edu VIC WA NT Hand Pre', cursive;
+} */
