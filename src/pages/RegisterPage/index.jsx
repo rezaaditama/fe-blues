@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import AuthLayout from '../../components/AuthLayout';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
@@ -9,6 +10,13 @@ const RegisterPage = () => {
       <Overlay />
       <AuthLayout className={'w-1/3'} type={'register'}>
         <form action={''} className='pt-2 space-y-3'>
+          <Input
+            label={'Fullname'}
+            id={'fullname'}
+            name={'fullname'}
+            type={'text'}
+            placeholder={'Enter your fullname'}
+          />
           <Input
             label={'Username'}
             id={'username'}
@@ -41,9 +49,9 @@ const RegisterPage = () => {
           <Button className={'bg-green-900 text-white w-full'}>SIGN UP</Button>
           <p className='text-base text-center'>
             Have an account?{' '}
-            <a href='' className='font-bold text-green-900'>
+            <Link to={'/'} className='font-bold text-green-900'>
               Sign In
-            </a>
+            </Link>
           </p>
         </form>
       </AuthLayout>

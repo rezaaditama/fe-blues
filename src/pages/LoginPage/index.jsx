@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import AuthLayout from '../../components/AuthLayout';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
@@ -26,9 +27,9 @@ const LoginPage = () => {
           <Button className={'bg-green-900 text-white w-full'}>SUBMIT</Button>
           <p className='text-base text-center'>
             Don't have an account?{' '}
-            <a href='' className='font-bold text-green-900'>
+            <Link to={'/register'} className='font-bold text-green-900'>
               Sign Up
-            </a>
+            </Link>
           </p>
         </form>
       </AuthLayout>
