@@ -1,32 +1,58 @@
 import Button from '../../components/Button';
 
-const CardProduct = () => {
+const CardProduct = ({ children, className }) => {
+  return <div className={`${className} shadow-2xl rounded-xl`}>{children}</div>;
+};
+
+const Header = ({ path, name, className }) => {
   return (
-    <div className='w-1/4 shadow-2xl p-3 rounded-xl space-y-2'>
-      <div className='space-y-2'>
-        <img
-          src='/public/img/villaMelati/villaMelati-1.jpeg'
-          alt=''
-          className='object-cover rounded-xl'
-        />
-        <h1 className='text-center font-bold'>Villa Melati</h1>
-      </div>
-      <div className=''>
-        <p className='line-clamp-4 text-justify'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-          ullam harum praesentium tempora quis nisi, magnam amet animi
-          distinctio reprehenderit accusamus labore iste, inventore quasi
-          repudiandae.
-        </p>
-      </div>
-      <div className='space-y-2'>
-        <Button className={'bg-yellow-500 text-white w-full'}>Checkout</Button>
-        <Button className={'bg-green-950 text-white w-full'}>
-          Booking Now
-        </Button>
-      </div>
+    <div className='space-y-2'>
+      <img
+        src={path}
+        alt={name}
+        className={`${className} rounded-t-xl w-full object-cover`}
+      />
+      <h1 className='text-center font-bold text-lg'>{name}</h1>
     </div>
   );
 };
+
+const Body = ({ detail, price }) => {
+  return (
+    <div className='space-y-2 p-2'>
+      <p className='line-clamp-4 text-justify'>{detail}</p>
+      <p className='text-center font-bold'>
+        Rp.{' '}
+        {typeof price === 'number'
+          ? price.toLocaleString('id-ID')
+          : 'Harga Tidak Diketahui'}
+      </p>
+    </div>
+  );
+};
+const Footer = ({ HandleCheckout, HandleBooking }) => {
+  return (
+    <div className='space-y-2 px-2 pb-4'>
+      <Button
+        className={'bg-yellow-500 text-white w-full'}
+        onClick={HandleCheckout}
+        type={'button'}
+      >
+        Checkout
+      </Button>
+      <Button
+        className={'bg-green-950 text-white w-full'}
+        onClick={HandleBooking}
+        type={'button'}
+      >
+        Booking Now
+      </Button>
+    </div>
+  );
+};
+
+CardProduct.Header = Header;
+CardProduct.Body = Body;
+CardProduct.Footer = Footer;
 
 export default CardProduct;
