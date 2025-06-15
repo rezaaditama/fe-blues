@@ -2,7 +2,7 @@ const Overlay = ({ src }) => {
   return (
     <div className='min-h-screen fixed inset-0 z-0'>
       <img
-        src={src || '../public/img/hero-1.jpeg'}
+        src={src || '../public//assets/img/hero-1.jpeg'}
         alt='Villa Seruni'
         className='w-full h-full object-cover'
       />
